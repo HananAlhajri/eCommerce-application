@@ -2,6 +2,7 @@ package com.example.demo.controllers;
 
 import java.util.List;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,15 +19,13 @@ import com.example.demo.model.persistence.repositories.OrderRepository;
 import com.example.demo.model.persistence.repositories.UserRepository;
 
 @RestController
+@RequiredArgsConstructor
 @RequestMapping("/api/order")
 public class OrderController {
-	
-	
-	@Autowired
-	private UserRepository userRepository;
-	
-	@Autowired
-	private OrderRepository orderRepository;
+
+	private final UserRepository userRepository;
+
+	private final OrderRepository orderRepository;
 	
 	
 	@PostMapping("/submit/{username}")
