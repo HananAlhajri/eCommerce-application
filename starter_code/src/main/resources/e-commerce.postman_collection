@@ -1,0 +1,266 @@
+{
+	"info": {
+		"_postman_id": "0ea769c0-d5c0-4161-9e31-e9c7621d6675",
+		"name": "[master] jwt-and-devops Copy",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26484521"
+	},
+	"item": [
+		{
+			"name": "create-user",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"Hanan\",\r\n    \"password\": \"abcdgef\", \r\n    \"confirmPassword\": \"abcdgef\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/user/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"user",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"Hanan\",\r\n    \"password\": \"abcdgef\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get-all-items",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJIYW5hbiIsImV4cCI6MTY5ODkxOTU0Mn0.mtvRQBfvqJiF7WfINyW5ncTTZT1xfJ2is4-hIBSAGd-7UE37CBhnHhbpTHzHDdNvF-R5802Llk5_JfPv0ig2YQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"Hanan\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/item",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"item"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get-user-order-history",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJIYW5hbiIsImV4cCI6MTY5ODkyMDY1OX0.znf1EACaT7tjRsetczf5EHWxa70TGCdhLwtsTZoFWF8O2bhH1uNME96qqqqeJ4wSOKUuGPM7XXWpIr_zLEOarA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"Hanan\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/order/history/Hanan",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"order",
+						"history",
+						"Hanan"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add-to-cart",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJIYW5hbiIsImV4cCI6MTY5ODkyMDY1OX0.znf1EACaT7tjRsetczf5EHWxa70TGCdhLwtsTZoFWF8O2bhH1uNME96qqqqeJ4wSOKUuGPM7XXWpIr_zLEOarA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"Hanan\",\r\n    \"itemId\": 1,\r\n    \"quantity\": 1\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/cart/addToCart",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"cart",
+						"addToCart"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "submit-order",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJIYW5hbiIsImV4cCI6MTY5ODkyMDY1OX0.znf1EACaT7tjRsetczf5EHWxa70TGCdhLwtsTZoFWF8O2bhH1uNME96qqqqeJ4wSOKUuGPM7XXWpIr_zLEOarA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"Hanan\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/order/submit/Hanan",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"order",
+						"submit",
+						"Hanan"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get-user",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJIYW5hbiIsImV4cCI6MTY5ODMyNDEzM30.ud-sWzIyB6fOPkjCp1Ba5f2QIVUzWV1WS88e73Ejm262jeQQIWdNIL08K2JmwJY0R8X6pQ6_PpVUFfRElqvNcA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"Hanan\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/user/Hanan",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"user",
+						"Hanan"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "USER_TOKEN",
+			"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJIYW5hbiIsImV4cCI6MTY5Nzk2MzkxMn0.uDooQSMYPkrLqtVjnYxf8PJsANaFahY28FiUzM2VD30FML2maTaX8v9iqvJrlLjeDSqADfKWyqIse_kF1ugoxQ"
+		}
+	]
+}
