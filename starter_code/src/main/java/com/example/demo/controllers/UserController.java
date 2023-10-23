@@ -1,8 +1,8 @@
 package com.example.demo.controllers;
 
-import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,15 +19,17 @@ import com.example.demo.model.persistence.repositories.UserRepository;
 import com.example.demo.model.requests.CreateUserRequest;
 
 @RestController
-@RequiredArgsConstructor
 @RequestMapping("/api/user")
 public class UserController {
 
-	private final UserRepository userRepository;
+	@Autowired
+	private UserRepository userRepository;
 
-	private final CartRepository cartRepository;
+	@Autowired
+	private CartRepository cartRepository;
 
-	private final BCryptPasswordEncoder bCryptPasswordEncoder;
+	@Autowired
+	private BCryptPasswordEncoder bCryptPasswordEncoder;
 
 	private final Logger LOGGER = LoggerFactory.getLogger(UserController.class);
 

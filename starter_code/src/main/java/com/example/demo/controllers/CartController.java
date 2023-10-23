@@ -3,7 +3,7 @@ package com.example.demo.controllers;
 import java.util.Optional;
 import java.util.stream.IntStream;
 
-import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -20,15 +20,17 @@ import com.example.demo.model.persistence.repositories.UserRepository;
 import com.example.demo.model.requests.ModifyCartRequest;
 
 @RestController
-@RequiredArgsConstructor
 @RequestMapping("/api/cart")
 public class CartController {
 
-	private final UserRepository userRepository;
+	@Autowired
+	private UserRepository userRepository;
 
-	private final CartRepository cartRepository;
+	@Autowired
+	private CartRepository cartRepository;
 
-	private final ItemRepository itemRepository;
+	@Autowired
+	private ItemRepository itemRepository;
 	
 	@PostMapping("/addToCart")
 	public ResponseEntity<Cart> addTocart(@RequestBody ModifyCartRequest request) {
